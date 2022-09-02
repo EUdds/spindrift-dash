@@ -2,7 +2,7 @@ from imp import reload
 import uvicorn
 import threading
 from spindrift_dash.api.main import app as api_app
-from spindrift_dash.src.main import app as dash_app
+from main import app as dash_app
 
 def run_api():
     uvicorn.run(api_app)

@@ -7,7 +7,7 @@ from dateutil import tz
 from_zone = tz.tzutc()
 to_zone = tz.tzlocal()
 
-from spindrift_dash.src.Spindrift import SpindriftData
+from Spindrift import SpindriftData
 
 app = Dash(external_stylesheets=[dbc.themes.CYBORG])
 

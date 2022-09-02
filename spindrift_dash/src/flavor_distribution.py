@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 from dash import dcc
 
-from spindrift_dash.src.utils import Distribution
+from utils import Distribution
 
 class FlavorDistribution(Distribution):
     def __init__(self, drinks_df: pd.DataFrame):

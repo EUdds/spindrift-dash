@@ -3,8 +3,8 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 
 from dash import html
-from spindrift_dash.src.flavor_distribution import FlavorDistribution
-from spindrift_dash.src.date_distribution import DateDistribution
+from flavor_distribution import FlavorDistribution
+from date_distribution import DateDistribution
 
 
 class SpindriftData:
@@ -30,7 +30,7 @@ class SpindriftData:
         self.total_drinks = len(self.drinks_df)
     
     def add_drink_form(self):
-        form = dbc.Form(action="/drinks/now", method="POST", id="add_drink_form", children=[
+        form = dbc.Form(action=f"{self.url}/drinks/now", method="POST", id="add_drink_form", children=[
             html.Div(children=[
                 dbc.Label("Flavor", html_for="flavor"),
                 dbc.Select(id="flavor", name="flavor_id", options=[{"label": row['name'], "value": row['id']} for row in self.flavors_df.to_dict('records')]),
